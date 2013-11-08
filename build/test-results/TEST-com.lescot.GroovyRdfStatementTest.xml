@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.GroovyRdfStatementTest" tests="1" time="1.159" timestamp="2013-11-07T21:59:28">
+  <properties />
+  <testcase classname="com.lescot.GroovyRdfStatementTest" name="testSPO" time="0.826" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

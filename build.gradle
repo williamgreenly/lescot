@@ -1,0 +1,44 @@
+import org.ajoberstar.gradle.git.tasks.*
+
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+	maven {
+		url "http://on.cs.unibas.ch/maven/repository"
+	}
+	maven {
+		url "https://repository.apache.org/content/repositories/releases/"
+	}
+	maven {
+		url "http://any23.googlecode.com/svn/repo-ext"
+	}
+	maven {
+		url "http://dev.biordf.net/maven/"
+	}
+}
+
+dependencies {
+    //groovy group:'org.codehaus.groovy.modules.http-builder', name:'http-builder', version:'0.6'
+    groovy 'org.codehaus.groovy:groovy-all:2.0.7'
+    groovy group: 'org.apache.ivy', name:'ivy', version:'2.2.0'
+	compile group: 'org.apache.jena', name: 'jena-core', version: '2.10.0'
+	compile group: 'org.apache.jena', name: 'jena-iri', version: '0.9.5'
+	compile group: 'org.apache.jena', name: 'jena-arq', version: '2.10.0'
+	
+	compile group: 'com.clarkparsia.pellet', name: 'pellet-core', version: '2.3.0'
+	compile group: 'com.clarkparsia.pellet', name: 'pellet-jena', version: '2.3.0'
+	compile group: 'com.clarkparsia.pellet', name: 'pellet-rules', version: '2.3.0'
+	compile group: 'com.clarkparsia.pellet', name: 'pellet-query', version: '2.3.0'
+	compile group: 'com.clarkparsia.pellet', name: 'pellet-el', version: '2.3.0'
+	
+    compile group: 'net.sf.opencsv', name:'opencsv', version: '2.0'
+	compile group: 'com.xlson.groovycsv', name:'groovycsv', version:'1.0'
+	compile group: 'org.jooq', name:'jooq', version:'3.0.0-RC2'
+	testCompile 'junit:junit:4.11'
+}
+
+jar {
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	manifest { attributes 'Main-Class': 'com.lescot.LescotApp' }
+ }

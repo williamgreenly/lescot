@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.GroovyRdfModelTest" tests="12" time="0.766" timestamp="2013-11-07T21:59:30">
+  <properties />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAddingATriplesWithStrings" time="0.094" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithDescribe" time="0.253" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testEach" time="0.035" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testConstruction" time="0.013" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testDeleteWithSparql" time="0.062" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAddingATripleWithSPO" time="0.048" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithSelect" time="0.097" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testConstructWhere" time="0.035" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testTurtleUri" time="0.008" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithConstruct" time="0.046" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testInsertWithSparql" time="0.038" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithAsk" time="0.021" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+DESCRIBE kotg:Test
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing describe query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test a kotg:Event}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test a kotg:Event}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+SELECT ?o WHERE {kotg:Test rdfs:label ?o. }
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing select query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: creating resultset
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: blahblahblah
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+SELECT ?o WHERE {kotg:Test2 a ?o. }
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing select query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: creating resultset
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: kotg:Event
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+CONSTRUCT {kotg:Test ?p ?o} 
+WHERE {kotg:Test ?p ?o} 
+
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing construct query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test a kotg:Event}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test rdfs:label 'blahblahblah'}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+CONSTRUCT {kotg:Test ?p ?o} WHERE {kotg:Test ?p ?o.}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing construct query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test a kotg:Event}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test rdfs:label 'blahblahblah'}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test a kotg:Event}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX provenance: <http://www.w3.org/ns/prov#> 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX mmi: <http://www.w3.org/2008/04/mmi-arch/> 
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
+PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
+PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
+ASK {kotg:Test a kotg:Event}
+07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+INFO: executing ask query
+]]></system-err>
+</testsuite>
