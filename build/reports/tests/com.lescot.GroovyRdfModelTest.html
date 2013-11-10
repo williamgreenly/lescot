@@ -21,17 +21,17 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">12</div>
+<div class="counter">16</div>
 <p>tests</p>
 </div>
 </td><td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td><td>
 <div class="infoBox" id="duration">
-<div class="counter">0.750s</div>
+<div class="counter">1.496s</div>
 <p>duration</p>
 </div>
 </td>
@@ -39,8 +39,8 @@
 </table>
 </div>
 </td><td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">93%</div>
 <p>successful</p>
 </div>
 </td>
@@ -50,13 +50,85 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard error</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div class="tab" id="tab0">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testDeleteWhere"></a>
+<h3 class="failures">testDeleteWhere</h3>
+<span class="code">
+<pre>Assertion failed: 
+
+assert !model.sparql("ASK {kotg:rt a kotg:ExperienceEvent}")
+       ||     |
+       ||     true
+       |&lt;ModelCom   {kotg: @owl:imports provenance:; kotg: @owl:imports mmi:; kotg: @owl:imports scxml:; kotg: @owl:imports kotw:; kotg: @rdf:type owl:Ontology; kotg:RoomsWithHealthCareProfessionals @owl:equivalentClass -19eec85b:1423f6dd872:-7ffb; kotg:RoomsWithHealthCareProfessionals @rdf:type rdfs:Class; kotg:life-room-projector @scxml:hasState mmi:running; kotg:life-room-projector @scxml:hasState mmi:paused; kotg:life-room-projector @scxml:hasState mmi:idle; kotg:life-room-projector @rdf:type mmi:ModalityComponent; kotg:VoiceSynthesiserComponent @rdfs:subClassOf mmi:ModalityComponent; kotg:VoiceSynthesiserComponent @rdf:type rdfs:Class; kotg:occupies @rdf:type owl:ObjectProperty; kotg:Room @rdf:type rdfs:Class; kotg:ExperienceEvent @rdfs:subClassOf kotg:Event; kotg:ExperienceEvent @rdfs:label "An experience event"...} |  [http://www.telekom.com/ns/kotg/, http://www.w3.org/2002/07/owl#imports, http://www.w3.org/ns/prov#] [http://www.telekom.com/ns/kotg/, http://www.w3.org/2002/07/owl#imports, http://www.w3.org/2008/04/mmi-arch/] [http://www.telekom.com/ns/kotg/, http://www.w3.org/2002/07/owl#imports, http://www.w3.org/2005/07/scxml/] [http://www.telekom.com/ns/kotg/, http://www.w3.org/2002/07/owl#imports, http://www.telekom.com/ns/kotw/] [http://www.telekom.com/ns/kotg/, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2002/07/owl#Ontology] [http://www.telekom.com/ns/kotg/RoomsWithHealthCareProfessionals, http://www.w3.org/2002/07/owl#equivalentClass, -19eec85b:1423f6dd872:-7ffb] [http://www.telekom.com/ns/kotg/RoomsWithHealthCareProfessionals, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/life-room-projector, http://www.w3.org/2005/07/scxml/hasState, http://www.w3.org/2008/04/mmi-arch/running] [http://www.telekom.com/ns/kotg/life-room-projector, http://www.w3.org/2005/07/scxml/hasState, http://www.w3.org/2008/04/mmi-arch/paused] [http://www.telekom.com/ns/kotg/life-room-projector, http://www.w3.org/2005/07/scxml/hasState, http://www.w3.org/2008/04/mmi-arch/idle] [http://www.telekom.com/ns/kotg/life-room-projector, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2008/04/mmi-arch/ModalityComponent] [http://www.telekom.com/ns/kotg/VoiceSynthesiserComponent, http://www.w3.org/2000/01/rdf-schema#subClassOf, http://www.w3.org/2008/04/mmi-arch/ModalityComponent] [http://www.telekom.com/ns/kotg/VoiceSynthesiserComponent, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/occupies, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2002/07/owl#ObjectProperty] [http://www.telekom.com/ns/kotg/Room, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/ExperienceEvent, http://www.w3.org/2000/01/rdf-schema#subClassOf, http://www.telekom.com/ns/kotg/Event] [http://www.telekom.com/ns/kotg/ExperienceEvent, http://www.w3.org/2000/01/rdf-schema#label, "An experience event"] [http://www.telekom.com/ns/kotg/ExperienceEvent, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/Experience, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/TransitionTriggerEvent, http://www.w3.org/2000/01/rdf-schema#subClassOf, http://www.telekom.com/ns/kotg/Event] [http://www.telekom.com/ns/kotg/TransitionTriggerEvent, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/screenWidth, http://www.w3.org/2000/01/rdf-schema#range, http://www.w3.org/2001/XMLSchema#integer] [http://www.telekom.com/ns/kotg/screenWidth, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2002/07/owl#DatatypeProperty] [http://www.telekom.com/ns/kotg/TouchScreenComponent, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/life-experience-idle, http://www.w3.org/2005/07/scxml/hasTransition, -19eec85b:1423f6dd872:-7ffa] [http://www.telekom.com/ns/kotg/life-experience-idle, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2005/07/scxml/State] [http://www.telekom.com/ns/kotg/rt, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.telekom.com/ns/kotg/ExperienceEvent] [http://www.telekom.com/ns/kotg/Event, http://www.w3.org/2000/01/rdf-schema#subClassOf, http://purl.org/NET/c4dm/event.owl#Event] [http://www.telekom.com/ns/kotg/Event, http://www.w3.org/2000/01/rdf-schema#label, "An event"] [http://www.telekom.com/ns/kotg/Event, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [http://www.telekom.com/ns/kotg/life-experience, http://www.w3.org/2005/07/scxml/hasState, http://www.telekom.com/ns/kotg/life-experience-has-just-asked-a-question] [http://www.telekom.com/ns/kotg/life-experience, http://www.w3.org/2005/07/scxml/hasState, http://www.telekom.com/ns/kotg/life-experience-start] [http://www.telekom.com/ns/kotg/life-experience, http://www.w3.org/2005/07/scxml/hasState, http://www.telekom.com/ns/kotg/life-experience-idle] [http://www.telekom.com/ns/kotg/life-experience, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.telekom.com/ns/kotg/Experience] [http://www.telekom.com/ns/kotg/screenHeight, http://www.w3.org/2000/01/rdf-schema#range, http://www.w3.org/2001/XMLSchema#integer] [http://www.telekom.com/ns/kotg/screenHeight, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2002/07/owl#DatatypeProperty] [http://www.telekom.com/ns/kotg/life-room-voice-input, http://www.w3.org/2005/07/scxml/hasState, http://www.w3.org/2008/04/mmi-arch/running] [http://www.telekom.com/ns/kotg/life-room-voice-input, http://www.w3.org/2005/07/scxml/hasState, http://www.w3.org/2008/04/mmi-arch/paused] [http://www.telekom.com/ns/kotg/life-room-voice-input, http://www.w3.org/2005/07/scxml/hasState, http://www.w3.org/2008/04/mmi-arch/idle] [http://www.telekom.com/ns/kotg/life-room-voice-input, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2008/04/mmi-arch/ModalityComponent] [-19eec85b:1423f6dd872:-7ffb, http://www.w3.org/2002/07/owl#onClass, http://www.telekom.com/ns/kotw/HealthCareProfessional] [-19eec85b:1423f6dd872:-7ffb, http://www.w3.org/2002/07/owl#minQualifiedCardinality, "3"^^http://www.w3.org/2001/XMLSchema#nonNegativeInteger] [-19eec85b:1423f6dd872:-7ffb, http://www.w3.org/2002/07/owl#onProperty, http://www.telekom.com/ns/kotg/occupiedBy] [-19eec85b:1423f6dd872:-7ffb, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2002/07/owl#Restriction] [http://www.telekom.com/ns/kotg/occupiedBy, http://www.w3.org/2002/07/owl#inverseOf, http://www.telekom.com/ns/kotg/occupies] [http://www.telekom.com/ns/kotg/occupiedBy, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2002/07/owl#ObjectProperty] [http://www.telekom.com/ns/kotg/VoiceInputComponent, http://www.w3.org/2000/01/rdf-schema#subClassOf, http://www.w3.org/2008/04/mmi-arch/ModalityComponent] [http://www.telekom.com/ns/kotg/VoiceInputComponent, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.w3.org/2000/01/rdf-schema#Class] [-19eec85b:1423f6dd872:-7ffa, http://www.w3.org/2005/07/scxml/target, http://www.telekom.com/ns/kotg/life-experience-start] [-19eec85b:1423f6dd872:-7ffa, http://www.w3.org/2005/07/scxml/event, http://www.telekom.com/ns/kotg/LifeExperienceStartEvent] [http://www.telekom.com/ns/kotg/life-room, http://www.w3.org/1999/02/22-rdf-syntax-ns#type, http://www.telekom.com/ns/kotg/Room]&gt;
+       false
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:399)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:655)
+	at com.lescot.GroovyRdfModelTest.testDeleteWhere(GroovyRdfModelTest.groovy:251)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:55)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:42)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.TypeCastDispatch.dispatch(TypeCastDispatch.java:30)
+	at org.gradle.messaging.remote.internal.WorkerProtocol.handleIncoming(WorkerProtocol.java:53)
+	at org.gradle.messaging.remote.internal.WorkerProtocol.handleIncoming(WorkerProtocol.java:31)
+	at org.gradle.messaging.remote.internal.ProtocolStack$ProtocolStage.handleIncoming(ProtocolStack.java:167)
+	at org.gradle.messaging.remote.internal.ProtocolStack$BottomStage.handleIncoming(ProtocolStack.java:277)
+	at org.gradle.messaging.remote.internal.ProtocolStack$BottomConnection$1.run(ProtocolStack.java:299)
+	at org.gradle.messaging.remote.internal.ProtocolStack$ExecuteRunnable.dispatch(ProtocolStack.java:120)
+	at org.gradle.messaging.remote.internal.ProtocolStack$ExecuteRunnable.dispatch(ProtocolStack.java:116)
+	at org.gradle.messaging.dispatch.AsyncDispatch.dispatchMessages(AsyncDispatch.java:132)
+	at org.gradle.messaging.dispatch.AsyncDispatch.access$000(AsyncDispatch.java:33)
+	at org.gradle.messaging.dispatch.AsyncDispatch$1.run(AsyncDispatch.java:72)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1146)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:679)
+</pre>
+</span>
+</div>
+</div>
+<div class="tab" id="tab1">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -65,47 +137,59 @@
 </tr>
 </thead>
 <tr>
-<td class="success">testAddingATripleWithSPO</td><td>0.048s</td><td class="success">passed</td>
+<td class="success">testAddingATripleWithSPO</td><td>0.045s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testAddingATriplesWithStrings</td><td>0.094s</td><td class="success">passed</td>
+<td class="success">testAddingATriplesWithStrings</td><td>0.107s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testConstructWhere</td><td>0.035s</td><td class="success">passed</td>
+<td class="success">testAsk</td><td>0.041s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testConstruction</td><td>0.013s</td><td class="success">passed</td>
+<td class="success">testConstructWhere</td><td>0.038s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testDeleteWithSparql</td><td>0.062s</td><td class="success">passed</td>
+<td class="success">testConstruction</td><td>0.016s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testEach</td><td>0.035s</td><td class="success">passed</td>
+<td class="failures">testDeleteWhere</td><td>0.024s</td><td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">testFindWithAsk</td><td>0.021s</td><td class="success">passed</td>
+<td class="success">testDeleteWithSparql</td><td>0.054s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testFindWithConstruct</td><td>0.046s</td><td class="success">passed</td>
+<td class="success">testEach</td><td>0.042s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testFindWithDescribe</td><td>0.253s</td><td class="success">passed</td>
+<td class="success">testFindWithAsk</td><td>0.019s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testFindWithSelect</td><td>0.097s</td><td class="success">passed</td>
+<td class="success">testFindWithConstruct</td><td>0.033s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testInsertWithSparql</td><td>0.038s</td><td class="success">passed</td>
+<td class="success">testFindWithDescribe</td><td>0.271s</td><td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testTurtleUri</td><td>0.008s</td><td class="success">passed</td>
+<td class="success">testFindWithSelect</td><td>0.059s</td><td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInsertWithSparql</td><td>0.029s</td><td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testReason</td><td>0.676s</td><td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTurtle</td><td>0.032s</td><td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTurtleUri</td><td>0.010s</td><td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div class="tab" id="tab1">
+<div class="tab" id="tab2">
 <h2>Standard error</h2>
 <span class="code">
-<pre>07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+<pre>10-Nov-2013 00:33:52 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -118,9 +202,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 DESCRIBE kotg:Test
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:52 java_util_logging_Logger$info call
 INFO: executing describe query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -133,9 +217,39 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test a kotg:Event}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
+PREFIX mmi: &lt;http://www.w3.org/2008/04/mmi-arch/&gt; 
+PREFIX event: &lt;http://purl.org/NET/c4dm/event.owl#&gt; 
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; 
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; 
+PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt; 
+PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
+PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
+ASK {kotg:rt a kotg:ExperienceEvent}
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
+INFO: executing ask query
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
+PREFIX mmi: &lt;http://www.w3.org/2008/04/mmi-arch/&gt; 
+PREFIX event: &lt;http://purl.org/NET/c4dm/event.owl#&gt; 
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; 
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; 
+PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt; 
+PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
+PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
+ASK {kotg:rt a kotg:ExperienceEvent}
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
+INFO: executing ask query
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -148,9 +262,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test a kotg:Event}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -163,13 +277,13 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 SELECT ?o WHERE {kotg:Test rdfs:label ?o. }
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing select query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: creating resultset
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: blahblahblah
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -182,13 +296,13 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 SELECT ?o WHERE {kotg:Test2 a ?o. }
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing select query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: creating resultset
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: kotg:Event
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -203,9 +317,9 @@ PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt;
 CONSTRUCT {kotg:Test ?p ?o} 
 WHERE {kotg:Test ?p ?o} 
 
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing construct query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -218,9 +332,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test a kotg:Event}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -233,9 +347,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test rdfs:label 'blahblahblah'}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -248,9 +362,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 CONSTRUCT {kotg:Test ?p ?o} WHERE {kotg:Test ?p ?o.}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing construct query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -263,9 +377,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test a kotg:Event}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -278,9 +392,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test rdfs:label 'blahblahblah'}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -293,9 +407,9 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test a kotg:Event}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: executing ask query
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
 INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
 PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
@@ -308,14 +422,63 @@ PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt;
 PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
 PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
 ASK {kotg:Test a kotg:Event}
-07-Nov-2013 21:59:30 java_util_logging_Logger$info call
+10-Nov-2013 00:33:53 java_util_logging_Logger$info call
+INFO: executing ask query
+Classifying 14 elements
+
+Classifying:  7% complete in 00:00
+Classifying:  14% complete in 00:00
+Classifying:  21% complete in 00:00
+Classifying:  28% complete in 00:00
+Classifying:  35% complete in 00:00
+Classifying:  42% complete in 00:00
+Classifying:  50% complete in 00:00
+Classifying:  57% complete in 00:00
+Classifying:  64% complete in 00:00
+Classifying:  71% complete in 00:00
+Classifying:  78% complete in 00:00
+Classifying:  85% complete in 00:00
+Classifying:  92% complete in 00:00
+Classifying:  100% complete in 00:00
+Classifying finished in 00:00
+Realizing 14 elements
+
+Realizing:  7% complete in 00:00
+Realizing:  14% complete in 00:00
+Realizing:  21% complete in 00:00
+Realizing:  28% complete in 00:00
+Realizing:  35% complete in 00:00
+Realizing:  42% complete in 00:00
+Realizing:  50% complete in 00:00
+Realizing:  57% complete in 00:00
+Realizing:  64% complete in 00:00
+Realizing:  71% complete in 00:00
+Realizing:  78% complete in 00:00
+Realizing:  85% complete in 00:00
+Realizing:  92% complete in 00:00
+Realizing:  100% complete in 00:00
+Realizing finished in 00:00
+10-Nov-2013 00:33:54 java_util_logging_Logger$info call
+INFO: PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+PREFIX provenance: &lt;http://www.w3.org/ns/prov#&gt; 
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt; 
+PREFIX mmi: &lt;http://www.w3.org/2008/04/mmi-arch/&gt; 
+PREFIX event: &lt;http://purl.org/NET/c4dm/event.owl#&gt; 
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; 
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; 
+PREFIX scxml: &lt;http://www.w3.org/2005/07/scxml/&gt; 
+PREFIX kotg: &lt;http://www.telekom.com/ns/kotg/&gt; 
+PREFIX kotw: &lt;http://www.telekom.com/ns/kotw/&gt; 
+ASK {kotg:rt a kotg:Event}
+10-Nov-2013 00:33:54 java_util_logging_Logger$info call
 INFO: executing ask query
 </pre>
 </span>
 </div>
 </div>
 <div id="footer">
-<p>Generated by <a href="http://www.gradle.org/">Gradle 1.2</a> at 07-Nov-2013 21:59:31</p>
+<p>Generated by <a href="http://www.gradle.org/">Gradle 1.2</a> at 10-Nov-2013 00:33:54</p>
 </div>
 </div>
 </body>

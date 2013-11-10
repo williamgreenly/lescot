@@ -228,5 +228,30 @@ class GroovyRdfModelTest extends GroovyTestCase {
 			assert it.o == "rdfs:Class"
 		}
 	}
-	
+
+	void testTurtle () {
+		
+		Model nm = ModelFactory.createDefaultModel()
+		nm.read (new ByteArrayInputStream(model.turtle().getBytes()), null, "TTL")
+    }
+
+    void testAsk() {
+    	model.add("kotg:rt a kotg:ExperienceEvent")
+    	assert model.ask("kotg:rt a kotg:ExperienceEvent")
+    }
+    
+    void testReason () {
+    	model.add("kotg:rt a kotg:ExperienceEvent")
+    	assert model.reason().ask("kotg:rt a kotg:Event")
+    }	
+
+    void testDeleteWhere() {
+    	model.add("kotg:rt a kotg:ExperienceEvent")
+    	model.deleteWhere("?a a kotg:ExperienceEvent")
+    	
+    	assert !model.ask("kotg:rt a kotg:ExperienceEvent")
+    }
+
+
+
 }

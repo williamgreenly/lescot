@@ -127,9 +127,13 @@ class GroovyRdfModel extends ModelCom implements Model {
 		sparql(spl,m)
 	}
 
+	public static deleteWhere(String pattern, Model m) {
+		String spl = "DELETE {" + pattern + "} WHERE {" + pattern + "}"
+	}
+
 	public static ask(String pattern, Model m) {
 		String spl = "ASK {" + pattern + "}"
-		sparql(spl, m)
+		return sparql(spl, m)
 	}
 	
 	
@@ -156,6 +160,11 @@ class GroovyRdfModel extends ModelCom implements Model {
 	
 	public static update (String spl, Model m) {
 		UpdateAction.parseExecute(serialisePrefixes(m) + spl, m)
+	}
+
+	public static reason (Model m) {
+		InfModel inferredModel = ModelFactory.createInfModel(PelletReasonerFactory.theInstance().create(), m)
+		return new GroovyRdfModel(inferredModel,m.getNsPrefixMap())
 	}
 		
 	private static checkAndExecuteQuery (QueryExecution qx, Query qy, Model mdl) {
@@ -225,9 +234,8 @@ class GroovyRdfModel extends ModelCom implements Model {
 		add (s, p, o, this)
 	}
 
-	def reason = {it ->
-		InfModel inferredModel = ModelFactory.createInfModel(PelletReasonerFactory.theInstance().create(), it)
-		return new GroovyRdfModel(inferredModel,this.getNsPrefixMap())
+	def reason () {
+		return reason(this)
 	}
 	
 	def update (String spl) {
@@ -257,6 +265,13 @@ class GroovyRdfModel extends ModelCom implements Model {
 		return b.toString()
 	}
 
+	def deleteWhere(String spl) {
+		deleteWhere(spl, this)
+	}
+
+	def ask (String pattern) {
+		return ask(pattern, this)
+	}
 
 
 }
