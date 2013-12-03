@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.builders.RdfBuilderTest" tests="17" time="0.133" timestamp="2013-11-10T00:33:54">
+<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.builders.RdfBuilderTest" tests="17" time="0.227" timestamp="2013-11-28T06:27:58">
   <properties />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatmentWithAPrefixedProperty" time="0.035" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatmentWithAPrefixedProperty" time="0.036" />
   <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithPrefixes" time="0.001" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithAModelWithStatementsWithPrefixes" time="0.001" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatementWithAResourceAsObject" time="0.004" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatmentWithAPrefixedResource" time="0.004" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithoutPrefixes" time="0.001" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewResourceWithMultipleObjects" time="0.004" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingAModelWithDeepNesting" time="0.011" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingAModelWithDeepNestingWithPrimedBuilder" time="0.013" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewPrefixedModelWithDeepNesting" time="0.011" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatementWithANonHTTPResource" time="0.004" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithAnEmptyModelWithoutPrefixes" time="0.0" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewPrefixedModel" time="0.001" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithAnEmptyModelandWithPrefixes" time="0.001" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelAndAddingAPrefixWithTheDsl" time="0.004" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewResourceWithMultiplePredicates" time="0.013" />
-  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatementWithALiteralAsObject" time="0.004" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithAModelWithStatementsWithPrefixes" time="0.002" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatementWithAResourceAsObject" time="0.007" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatmentWithAPrefixedResource" time="0.006" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithoutPrefixes" time="0.002" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewResourceWithMultipleObjects" time="0.011" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingAModelWithDeepNesting" time="0.025" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingAModelWithDeepNestingWithPrimedBuilder" time="0.02" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewPrefixedModelWithDeepNesting" time="0.024" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatementWithANonHTTPResource" time="0.01" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithAnEmptyModelWithoutPrefixes" time="0.004" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewPrefixedModel" time="0.004" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelWithAnEmptyModelandWithPrefixes" time="0.006" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewModelAndAddingAPrefixWithTheDsl" time="0.011" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewResourceWithMultiplePredicates" time="0.02" />
+  <testcase classname="com.lescot.builders.RdfBuilderTest" name="testCreatingANewStatementWithALiteralAsObject" time="0.01" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

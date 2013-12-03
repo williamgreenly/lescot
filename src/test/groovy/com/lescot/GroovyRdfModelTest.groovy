@@ -28,7 +28,10 @@ class GroovyRdfModelTest extends GroovyTestCase {
 	@prefix time: <http://www.w3.org/2006/time#>.
 	@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 	@prefix provenance: <http://www.w3.org/ns/prov#>.
-	
+	@prefix spin: <http://spinrdf.org/spin#>.
+	@prefix sp: <http://spinrdf.org/sp#>.
+	@prefix spl: <http://spinrdf.org/spl#>.
+
 	kotg: a owl:Ontology;
 		owl:imports kotw: ;
 		owl:imports scxml: ;
@@ -74,6 +77,8 @@ class GroovyRdfModelTest extends GroovyTestCase {
 		rdfs:range xsd:integer.
 	
 	kotg:occupies a owl:ObjectProperty.
+
+	kotg:inroom a owl:ObjectProperty.
 	
 	kotg:occupiedBy a owl:ObjectProperty;
 		owl:inverseOf kotg:occupies.
@@ -102,6 +107,18 @@ class GroovyRdfModelTest extends GroovyTestCase {
 			scxml:target kotg:life-experience-start
 		].
 
+	#spin
+	kotg:Person a rdfs:Class;
+		spin:rule
+              [ a       sp:Construct ;
+                sp:text """
+                    CONSTRUCT {
+					    ?this kotg:inroom ?something .
+					}
+					WHERE {
+					    ?this kotg:occupies ?something .
+					}"""
+              ] .
 
 	'''
 	
@@ -113,7 +130,7 @@ class GroovyRdfModelTest extends GroovyTestCase {
 	}
 	
 	void testConstruction() {
-		assert model.getNsPrefixMap().size() == 11
+		assert model.getNsPrefixMap().size() == 14
 	}
 	
 	void testAddingATriplesWithStrings() {
@@ -245,13 +262,21 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	assert model.reason().ask("kotg:rt a kotg:Event")
     }	
 
+    void testSpin() {
+    	model.add("kotg:testspin a kotg:Person. kotg:testspin kotg:occupies kotg:testroom.")
+    	log.info(model.spin().turtle())
+    	assert model.spin().ask("kotg:testspin kotg:inroom kotg:testroom")
+    }
+
+
+/*
     void testDeleteWhere() {
     	model.add("kotg:rt a kotg:ExperienceEvent")
-    	model.deleteWhere("?a a kotg:ExperienceEvent")
+    	model.deleteWhere("kotg:rt a kotg:ExperienceEvent")
     	
     	assert !model.ask("kotg:rt a kotg:ExperienceEvent")
     }
-
+*/
 
 
 }

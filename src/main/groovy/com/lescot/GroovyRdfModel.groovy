@@ -25,9 +25,9 @@ import com.hp.hpl.jena.update.UpdateAction
 import com.hp.hpl.jena.rdf.model.impl.ModelCom
 import com.hp.hpl.jena.graph.Factory
 import com.hp.hpl.jena.rdf.model.RDFNode
-import org.mindswap.pellet.jena.PelletReasonerFactory
 import com.hp.hpl.jena.reasoner.ReasonerRegistry
 import com.hp.hpl.jena.rdf.model.InfModel
+import org.topbraid.spin.inference.SPINInferences
 
 import groovy.util.logging.*
 
@@ -35,7 +35,9 @@ import groovy.util.logging.*
 class GroovyRdfModel extends ModelCom implements Model {
 
 
-	
+	def persistenceStore
+
+
 	public GroovyRdfModel(Map prefixes) {
 		super(Factory.createDefaultGraph())
 		this.setNsPrefixes(prefixes)
@@ -47,6 +49,14 @@ class GroovyRdfModel extends ModelCom implements Model {
 		this.add(m)
 	}
 	
+	public GroovyRdfModel(String uri) {
+
+	}
+
+	public GroovyRdfModel(String uri, Map prefixes) {
+		this (prefixes)
+		persistenceStore.getGraph(uri)
+	}
 	
 	public GroovyRdfModel() {
 		super(Factory.createDefaultGraph())
@@ -128,7 +138,7 @@ class GroovyRdfModel extends ModelCom implements Model {
 	}
 
 	public static deleteWhere(String pattern, Model m) {
-		String spl = "DELETE {" + pattern + "} WHERE {" + pattern + "}"
+		String spl = "DELETE {?s ?p ?o} WHERE {" + pattern + "}"
 	}
 
 	public static ask(String pattern, Model m) {
@@ -163,8 +173,22 @@ class GroovyRdfModel extends ModelCom implements Model {
 	}
 
 	public static reason (Model m) {
-		InfModel inferredModel = ModelFactory.createInfModel(PelletReasonerFactory.theInstance().create(), m)
+		InfModel inferredModel = ModelFactory.createInfModel(ReasonerRegistry.getOWLReasoner(), m)
+		Model result = ModelFactory.createDefaultModel()
+		new SPINInferences().run(inferredModel,result, null, null, true ,null)
+		result.add(inferredModel)
+		return new GroovyRdfModel(result,m.getNsPrefixMap())
+	}
+
+	public static owl(Model m) {
+		InfModel inferredModel = ModelFactory.createInfModel(ReasonerRegistry.getOWLReasoner(), m)
 		return new GroovyRdfModel(inferredModel,m.getNsPrefixMap())
+	}
+
+	public static spin (Model m) {
+		Model result = ModelFactory.createDefaultModel()
+		new SPINInferences().run(m,result, null, null, true ,null)
+		return new GroovyRdfModel(result,m.getNsPrefixMap())
 	}
 		
 	private static checkAndExecuteQuery (QueryExecution qx, Query qy, Model mdl) {
@@ -237,6 +261,14 @@ class GroovyRdfModel extends ModelCom implements Model {
 	def reason () {
 		return reason(this)
 	}
+
+	def owl () {
+		return owl(this)
+	}
+
+	def spin () {
+		return spin(this)
+	}
 	
 	def update (String spl) {
 		update (spl, this)
@@ -273,6 +305,9 @@ class GroovyRdfModel extends ModelCom implements Model {
 		return ask(pattern, this)
 	}
 
+	void save () {
+		persistenceStore.save(this)
+	}
 
 }
 
