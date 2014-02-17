@@ -1,7 +1,7 @@
 package com.lescot;
 
 import static org.junit.Assert.*
-
+import java.util.UUID
 import groovy.util.GroovyTestCase
 import com.hp.hpl.jena.rdf.model.Model
 import com.hp.hpl.jena.rdf.model.ModelFactory
@@ -11,6 +11,12 @@ import com.hp.hpl.jena.rdf.model.Property
 import com.hp.hpl.jena.rdf.model.Literal
 import java.io.ByteArrayOutputStream
 import com.hp.hpl.jena.rdf.model.impl.ModelCom
+import com.lescot.sparql.Datastore
+import static java.util.UUID.randomUUID
+import com.hp.hpl.jena.query.Query
+import com.hp.hpl.jena.query.QueryFactory
+import com.hp.hpl.jena.query.QueryExecution
+import com.hp.hpl.jena.query.QueryExecutionFactory
 
 class GroovyRdfModelTest extends GroovyTestCase {
 	
@@ -121,6 +127,8 @@ class GroovyRdfModelTest extends GroovyTestCase {
               ] .
 
 	'''
+
+	private fusekiUri = "http://localhost:3030/ds"
 	
 	void setUp() {
 		
@@ -267,6 +275,34 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	log.info(model.spin().turtle())
     	assert model.spin().ask("kotg:testspin kotg:inroom kotg:testroom")
     }
+
+    void testPutPostGetAndDelete() {
+    	def datastore = new Datastore(fusekiUri)
+    	model.datastore = datastore
+    	def uuid = randomUUID() as String
+    	model.uri = "http://test/" + uuid
+    	model.put()
+
+    	def sparql = """
+    	CONSTRUCT {?s ?p ?o}
+    	WHERE {
+    		GRAPH <${model.uri}>
+    		{?s ?p ?o}.
+    	}
+    	"""
+    	log.info sparql
+    	def res = model.sparqlRemote(sparql)
+    	assert res.ask("kotg:inroom a owl:ObjectProperty")
+    	def m2 = new GroovyRdfModel(model.getNsPrefixMap(), model.uri, model.datastore)
+    	m2.add("kotg:fu kotg:man kotg:chu")
+    	m2.post()
+    	model.get()
+    	assert model.ask("kotg:fu kotg:man kotg:chu")
+    	model.delete()
+    	res = model.sparqlRemote(sparql)
+    	assert !res.ask("kotg:inroom a owl:ObjectProperty")
+    }
+
 
 
 /*

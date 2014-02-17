@@ -7,76 +7,71 @@ Anyway, take a look at the examples below to get an idea of what this library ca
 
 **Create a Model**
 
-`def prefixes = [ex:"http://example.com/"]`
-
-`def model = new GroovyRdfModel(prefixes)`
+```
+def prefixes = [ex:"http://example.com/"]
+def model = new GroovyRdfModel(prefixes)
+```
 
 **Add some statements**
-
-`model.add("ex:Subject ex:predicate ex:Object")`
-
-`model.add("ex:Subject", "ex:predicate", "ex:Object")`
-
+```
+model.add("ex:Subject ex:predicate ex:Object")
+model.add("ex:Subject", "ex:predicate", "ex:Object")
+```
 **Ask some questions, find some answers**
-
-`def res = model.sparql("SELECT ?sub WHERE {?sub ex:predicate ?o}")`
-
-`res.each {`
-
->`    println it.sub`
-
-`}`
-
-`def construct = model.sparql("CONSTRUCT {ex:Subject ?p ?o} WHERE {?s ?p ?o}")`
-
-`construct.each {`
-
->`    println it.s`
-
->`    println it.p`
-
->`    println it.o`
-
-`}`
-
-`assert model.ask("ex:Subject ex:predicate ex:Object")`
-
+```
+def res = model.sparql("SELECT ?sub WHERE {?sub ex:predicate ?o}")
+res.each {
+   println it.sub
+}
+def construct = model.sparql("CONSTRUCT {ex:Subject ?p ?o} WHERE {?s ?p ?o}")
+construct.each {
+   println it.s
+   println it.p
+   println it.o
+}
+assert model.ask("ex:Subject ex:predicate ex:Object")
+```
 **Insert and delete**
-
-`model.update("INSERT DATA {kotg:Test a kotg:Event.}")`
-
-`model.update("DELETE DATA {kotg:Test a kotg:Event.}")`
-
+```
+model.update("INSERT DATA {kotg:Test a kotg:Event.}")
+model.update("DELETE DATA {kotg:Test a kotg:Event.}")
+```
 **Reason and SPIN**
-
-`def inferredModelByOWLReasoning = model.reason()`
-
-`def inferredModelBySPINRules = model.spin()`
-
+```
+def inferredModelByOWLReasoning = model.reason()
+def inferredModelBySPINRules = model.spin()
+```
 **Turtle is the way forward**
-
-`String turtle = model.turtle()`
-
+```
+String turtle = model.turtle()
+```
 **Build a RDF Graph**
-
-`def builder = new RdfBuilder(prefixes)`
-
-`builder.Model() {`
-
-> `Resource("ex:Subject") {`
-
->> `Predicate("ex:predicate") {`
-
->>>  `Resource("ex:Object")`
-  
->>  `}`
-				
->> `Predicate("ex:literal") {`
- 
->>> `Literal("Lescot")`
- 
->> `}`
-
-> `}`
-
-`}`
+```
+def builder = new RdfBuilder(prefixes)
+builder.Model() {
+ Resource("ex:Subject") {
+  Predicate("ex:predicate") {
+    Resource("ex:Object")
+  }  			
+  Predicate("ex:literal") {
+    Literal("Lescot")
+  }
+ }
+}
+```
+**Graphstore RDF**
+```
+def datastore = new Datastore("http://localhost:3030/ds")
+model.datastore = datastore
+model.uri = "http://graphUri"
+model.put()
+model.post(anotherModel)
+model.get()
+model.delete()
+```
+**SPARQL remote**
+```
+def datastore = new Datastore("http://localhost:3030/ds")
+model.datastore = datastore
+def result = model.sparqlRemote(sparqlQuery)
+```

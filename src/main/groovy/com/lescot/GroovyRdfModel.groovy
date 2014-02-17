@@ -6,7 +6,6 @@ import com.hp.hpl.jena.shared.PrefixMapping
 import com.hp.hpl.jena.rdf.model.Resource
 import com.hp.hpl.jena.rdf.model.Property
 import com.hp.hpl.jena.rdf.model.Literal
-import groovy.util.logging.*
 
 import java.io.ByteArrayOutputStream
 import java.lang.reflect.Method
@@ -28,6 +27,7 @@ import com.hp.hpl.jena.rdf.model.RDFNode
 import com.hp.hpl.jena.reasoner.ReasonerRegistry
 import com.hp.hpl.jena.rdf.model.InfModel
 import org.topbraid.spin.inference.SPINInferences
+import com.lescot.sparql.Datastore
 
 import groovy.util.logging.*
 
@@ -35,12 +35,19 @@ import groovy.util.logging.*
 class GroovyRdfModel extends ModelCom implements Model {
 
 
-	def persistenceStore
+	def uri
+	Datastore datastore
 
 
 	public GroovyRdfModel(Map prefixes) {
 		super(Factory.createDefaultGraph())
 		this.setNsPrefixes(prefixes)
+	}
+
+	public GroovyRdfModel(Map prefixes, Datastore datastore) {
+		super(Factory.createDefaultGraph())
+		this.setNsPrefixes(prefixes)
+		this.datastore = datastore
 	}
 	
 	public GroovyRdfModel(Model m, Map prefixes) {
@@ -48,14 +55,27 @@ class GroovyRdfModel extends ModelCom implements Model {
 		this.setNsPrefixes(prefixes)
 		this.add(m)
 	}
-	
-	public GroovyRdfModel(String uri) {
 
+	public GroovyRdfModel(Model m, Map prefixes, Datastore datastore) {
+		super(Factory.createDefaultGraph())
+		this.setNsPrefixes(prefixes)
+		this.add(m)
+		this.datastore = datastore
 	}
 
-	public GroovyRdfModel(String uri, Map prefixes) {
-		this (prefixes)
-		persistenceStore.getGraph(uri)
+	public GroovyRdfModel(Map prefixes, String uri, Datastore datastore) {
+		super(Factory.createDefaultGraph())
+		this.setNsPrefixes(prefixes)
+		this.uri = uri
+		this.datastore = datastore
+	}
+	
+	public GroovyRdfModel(Model m, Map prefixes, String uri, Datastore datastore) {
+		super(Factory.createDefaultGraph())
+		this.setNsPrefixes(prefixes)
+		this.add(m)
+		this.uri = uri
+		this.datastore = datastore
 	}
 	
 	public GroovyRdfModel() {
@@ -67,6 +87,20 @@ class GroovyRdfModel extends ModelCom implements Model {
 		this.add(m)
 		this.setNsPrefixes(m.getNsPrefixMap())
 	}
+
+	public GroovyRdfModel(String uri, Datastore datastore) {
+		super(Factory.createDefaultGraph())
+		this.uri = uri
+		this.datastore = datastore
+	}
+	
+	public GroovyRdfModel(Model m, String uri, Datastore datastore) {
+		super(Factory.createDefaultGraph())
+		this.add(m)
+		this.setNsPrefixes(m.getNsPrefixMap())
+		this.uri = uri
+		this.datastore = datastore
+	}
 	
 	public static sparql (String sparql, Model m) {
 		String q = serialisePrefixes(m) + sparql
@@ -74,6 +108,14 @@ class GroovyRdfModel extends ModelCom implements Model {
 		Query query = QueryFactory.create(q)
 		QueryExecution qx = QueryExecutionFactory.create(query, m)
 		
+		return checkAndExecuteQuery(qx, query, m)
+	}
+
+	public static sparqlRemote (String sparql, Model m, Datastore d) {
+		String q = serialisePrefixes(m) + sparql
+		log.info q
+		def qx = QueryExecutionFactory.sparqlService(d.sparqlEndpoint, q)
+		def query = qx.getQuery()		
 		return checkAndExecuteQuery(qx, query, m)
 	}
 
@@ -305,8 +347,24 @@ class GroovyRdfModel extends ModelCom implements Model {
 		return ask(pattern, this)
 	}
 
-	void save () {
-		persistenceStore.save(this)
+	void put ()  {
+		datastore.put(this, uri)
+	}
+
+	void post() {
+		datastore.post(this, uri)
+	}
+
+	void delete() {
+		datastore.delete(uri)
+	}
+
+	void get () {
+		this.add(datastore.get(uri))
+	}
+
+	def sparqlRemote(String q) {
+		sparqlRemote(q, this, this.datastore)
 	}
 
 }

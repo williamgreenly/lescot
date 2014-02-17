@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.GroovyRdfStatementTest" tests="1" time="1.231" timestamp="2013-11-28T06:27:54">
+<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.GroovyRdfStatementTest" tests="1" time="0.831" timestamp="2014-02-17T22:32:29">
   <properties />
-  <testcase classname="com.lescot.GroovyRdfStatementTest" name="testSPO" time="0.883" />
+  <testcase classname="com.lescot.GroovyRdfStatementTest" name="testSPO" time="0.575" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.apache.jena.riot.stream.JenaIOEnvironment).
 log4j:WARN Please initialize the log4j system properly.
