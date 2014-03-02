@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.GroovyRdfModelTest" tests="17" time="3.7" timestamp="2014-02-17T22:32:30">
+<testsuite errors="0" failures="0" hostname="william-VPCCA1S1E" name="com.lescot.GroovyRdfModelTest" tests="18" time="4.076" timestamp="2014-03-01T23:51:09">
   <properties />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAddingATriplesWithStrings" time="0.102" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithDescribe" time="0.275" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAsk" time="0.027" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testEach" time="0.041" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testSpin" time="0.489" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testConstruction" time="0.012" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testDeleteWithSparql" time="0.057" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAddingATripleWithSPO" time="0.074" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testPutPostGetAndDelete" time="1.445" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithSelect" time="0.057" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testConstructWhere" time="0.034" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testTurtleUri" time="0.006" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithConstruct" time="0.054" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testInsertWithSparql" time="0.023" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithAsk" time="0.025" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testReason" time="0.938" />
-  <testcase classname="com.lescot.GroovyRdfModelTest" name="testTurtle" time="0.016" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAddingATriplesWithStrings" time="0.107" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithDescribe" time="0.304" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAsk" time="0.029" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testEach" time="0.044" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testJson" time="0.311" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testSpin" time="0.601" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testConstruction" time="0.013" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testDeleteWithSparql" time="0.063" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testAddingATripleWithSPO" time="0.045" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testPutPostGetAndDelete" time="1.399" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithSelect" time="0.091" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testConstructWhere" time="0.051" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testTurtleUri" time="0.011" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithConstruct" time="0.05" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testInsertWithSparql" time="0.034" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testFindWithAsk" time="0.016" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testReason" time="0.829" />
+  <testcase classname="com.lescot.GroovyRdfModelTest" name="testTurtle" time="0.015" />
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[17-Feb-2014 22:32:30 java_util_logging_Logger$info call
+  <system-err><![CDATA[01-Mar-2014 23:51:09 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -35,9 +36,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 DESCRIBE kotg:Test
-17-Feb-2014 22:32:30 java_util_logging_Logger$info call
+01-Mar-2014 23:51:09 java_util_logging_Logger$info call
 INFO: executing describe query
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:09 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -53,9 +54,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test a kotg:Event}
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:09 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:09 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -71,9 +72,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:rt a kotg:ExperienceEvent}
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:09 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:10 java_util_logging_Logger$info call
 INFO: @prefix sp:    <http://spinrdf.org/sp#> .
 @prefix scxml: <http://www.w3.org/2005/07/scxml/> .
 @prefix kotg:  <http://www.telekom.com/ns/kotg/> .
@@ -91,7 +92,7 @@ INFO: @prefix sp:    <http://spinrdf.org/sp#> .
 
 kotg:testspin  kotg:inroom  kotg:testroom .
 
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:10 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -107,9 +108,9 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX spin: <http://spinrdf.org/spin#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:testspin kotg:inroom kotg:testroom}
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:10 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:10 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -125,17 +126,17 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test a kotg:Event}
-17-Feb-2014 22:32:31 java_util_logging_Logger$info call
+01-Mar-2014 23:51:10 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:32 sun.reflect.NativeMethodAccessorImpl invoke0
+01-Mar-2014 23:51:11 sun.reflect.NativeMethodAccessorImpl invoke0
 INFO: 
     	CONSTRUCT {?s ?p ?o}
     	WHERE {
-    		GRAPH <http://test/a7be8a26-3c5b-444c-bd7a-2110dff36f70>
+    		GRAPH <http://test/23661a37-a3b4-43a1-9bc3-fe3b8f6e8a2a>
     		{?s ?p ?o}.
     	}
     	
-17-Feb-2014 22:32:32 java_util_logging_Logger$info call
+01-Mar-2014 23:51:11 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -153,13 +154,13 @@ PREFIX kotw: <http://www.telekom.com/ns/kotw/>
 
     	CONSTRUCT {?s ?p ?o}
     	WHERE {
-    		GRAPH <http://test/a7be8a26-3c5b-444c-bd7a-2110dff36f70>
+    		GRAPH <http://test/23661a37-a3b4-43a1-9bc3-fe3b8f6e8a2a>
     		{?s ?p ?o}.
     	}
     	
-17-Feb-2014 22:32:32 java_util_logging_Logger$info call
+01-Mar-2014 23:51:11 java_util_logging_Logger$info call
 INFO: executing construct query
-17-Feb-2014 22:32:32 java_util_logging_Logger$info call
+01-Mar-2014 23:51:11 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -175,9 +176,9 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX spin: <http://spinrdf.org/spin#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:inroom a owl:ObjectProperty}
-17-Feb-2014 22:32:32 java_util_logging_Logger$info call
+01-Mar-2014 23:51:11 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:32 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -193,9 +194,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:fu kotg:man kotg:chu}
-17-Feb-2014 22:32:32 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -213,13 +214,13 @@ PREFIX kotw: <http://www.telekom.com/ns/kotw/>
 
     	CONSTRUCT {?s ?p ?o}
     	WHERE {
-    		GRAPH <http://test/a7be8a26-3c5b-444c-bd7a-2110dff36f70>
+    		GRAPH <http://test/23661a37-a3b4-43a1-9bc3-fe3b8f6e8a2a>
     		{?s ?p ?o}.
     	}
     	
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing construct query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -235,9 +236,9 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX spin: <http://spinrdf.org/spin#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:inroom a owl:ObjectProperty}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -253,13 +254,13 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 SELECT ?o WHERE {kotg:Test rdfs:label ?o. }
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing select query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: creating resultset
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: blahblahblah
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -275,13 +276,13 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 SELECT ?o WHERE {kotg:Test2 a ?o. }
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing select query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: creating resultset
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: kotg:Event
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -299,9 +300,9 @@ PREFIX kotw: <http://www.telekom.com/ns/kotw/>
 CONSTRUCT {kotg:Test ?p ?o} 
 WHERE {kotg:Test ?p ?o} 
 
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing construct query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -317,9 +318,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test a kotg:Event}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -335,9 +336,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test rdfs:label 'blahblahblah'}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -353,9 +354,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 CONSTRUCT {kotg:Test ?p ?o} WHERE {kotg:Test ?p ?o.}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing construct query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -371,9 +372,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test a kotg:Event}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -389,9 +390,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test rdfs:label 'blahblahblah'}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -407,9 +408,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test a kotg:Event}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -425,9 +426,9 @@ PREFIX spin: <http://spinrdf.org/spin#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:Test a kotg:Event}
-17-Feb-2014 22:32:33 java_util_logging_Logger$info call
+01-Mar-2014 23:51:12 java_util_logging_Logger$info call
 INFO: executing ask query
-17-Feb-2014 22:32:34 java_util_logging_Logger$info call
+01-Mar-2014 23:51:13 java_util_logging_Logger$info call
 INFO: PREFIX sp: <http://spinrdf.org/sp#> 
 PREFIX scxml: <http://www.w3.org/2005/07/scxml/> 
 PREFIX kotg: <http://www.telekom.com/ns/kotg/> 
@@ -443,7 +444,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX spin: <http://spinrdf.org/spin#> 
 PREFIX kotw: <http://www.telekom.com/ns/kotw/> 
 ASK {kotg:rt a kotg:Event}
-17-Feb-2014 22:32:34 java_util_logging_Logger$info call
+01-Mar-2014 23:51:13 java_util_logging_Logger$info call
 INFO: executing ask query
 ]]></system-err>
 </testsuite>

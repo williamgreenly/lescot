@@ -17,9 +17,15 @@ import com.hp.hpl.jena.query.Query
 import com.hp.hpl.jena.query.QueryFactory
 import com.hp.hpl.jena.query.QueryExecution
 import com.hp.hpl.jena.query.QueryExecutionFactory
+import com.github.jsonldjava.jena.*    
+
 
 class GroovyRdfModelTest extends GroovyTestCase {
 	
+	static {
+	    JenaJSONLD.init();       
+	}
+
 	private GroovyRdfModel model
 	private String turtle = '''
 
@@ -258,6 +264,12 @@ class GroovyRdfModelTest extends GroovyTestCase {
 		
 		Model nm = ModelFactory.createDefaultModel()
 		nm.read (new ByteArrayInputStream(model.turtle().getBytes()), null, "TTL")
+    }
+
+    void testJson () {
+		
+		Model nm = ModelFactory.createDefaultModel()
+		nm.read (new ByteArrayInputStream(model.json().getBytes()), null, "JSON-LD")
     }
 
     void testAsk() {

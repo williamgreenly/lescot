@@ -28,12 +28,18 @@ import com.hp.hpl.jena.reasoner.ReasonerRegistry
 import com.hp.hpl.jena.rdf.model.InfModel
 import org.topbraid.spin.inference.SPINInferences
 import com.lescot.sparql.Datastore
+import com.github.jsonldjava.jena.*    
 
 import groovy.util.logging.*
+
+
 
 @Log
 class GroovyRdfModel extends ModelCom implements Model {
 
+	static {
+	    JenaJSONLD.init();       
+	}
 
 	def uri
 	Datastore datastore
@@ -337,6 +343,12 @@ class GroovyRdfModel extends ModelCom implements Model {
 		ByteArrayOutputStream b = new ByteArrayOutputStream()
 		this.write(b, "TURTLE", null)
 		return b.toString()
+	}
+
+	def json () {
+		ByteArrayOutputStream b = new ByteArrayOutputStream()
+    	this.write(b, "JSON-LD", null)
+    	return b.toString()  
 	}
 
 	def deleteWhere(String spl) {
