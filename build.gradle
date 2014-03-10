@@ -3,6 +3,9 @@ import org.ajoberstar.gradle.git.tasks.*
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
+group = 'com.lescot'
+version = '0.1'
+
 repositories {
     mavenCentral()
 	maven {
