@@ -29,6 +29,9 @@ import com.hp.hpl.jena.rdf.model.InfModel
 import org.topbraid.spin.inference.SPINInferences
 import com.lescot.sparql.Datastore
 import com.github.jsonldjava.jena.*    
+import org.ccil.cowan.tagsoup.Parser
+import groovy.util.XmlSlurper
+import net.rootdev.javardfa.jena.RDFaReader
 
 import groovy.util.logging.*
 
@@ -180,6 +183,24 @@ class GroovyRdfModel extends ModelCom implements Model {
 		}
 	}
 
+	public static addRdfa(String html, String baseUri, Model m) {
+		addRdfa(html, baseUri, m, "HTML")
+	}
+
+	public static addRdfa(String uri, Model m) {
+		addRdfa(uri, m, "HTML")
+	}
+
+	public static addRdfa(String html, String baseUri, Model m, String type) {
+		Class.forName("net.rootdev.javardfa.jena.RDFaReader")
+		m.read(new ByteArrayInputStream(html.getBytes()), baseUri, type)
+	}
+
+	public static addRdfa(String uri, Model m, String type) {
+		Class.forName("net.rootdev.javardfa.jena.RDFaReader")
+		m.read(uri, type)
+	}
+
 	public static delete(String pattern, Model m) {
 		String spl = "DELETE DATA {" + pattern + "}"
 		sparql(spl,m)
@@ -226,6 +247,22 @@ class GroovyRdfModel extends ModelCom implements Model {
 		new SPINInferences().run(inferredModel,result, null, null, true ,null)
 		result.add(inferredModel)
 		return new GroovyRdfModel(result,m.getNsPrefixMap())
+	}
+
+	public static reason(Model m, Model schema) {
+		def inferredModel = owl(m, schema)
+		Model result = ModelFactory.createDefaultModel()
+		new SPINInferences().run(inferredModel,result, null, null, true ,null)
+		result.add(inferredModel)
+		return new GroovyRdfModel(result,inferredModel.getNsPrefixMap())
+	}
+
+	public static owl(Model m, Model schema) {
+		Model box = ModelFactory.createDefaultModel()
+		box.add (m)
+		box.add (schema)
+		InfModel inferredModel = ModelFactory.createInfModel(ReasonerRegistry.getOWLReasoner(), box)
+		return new GroovyRdfModel(inferredModel, m.getNsPrefixMap())
 	}
 
 	public static owl(Model m) {
@@ -306,8 +343,28 @@ class GroovyRdfModel extends ModelCom implements Model {
 		add (s, p, o, this)
 	}
 
+	void addRdfa (String html, String baseUri) {
+		addRdfa (html, baseUri, this)
+	}
+
+	void addRdfa (String uri) {
+		addRdfa (uri, this)
+	}
+
+	def abox(schema) {
+		return abox(this, schema)
+	}
+
 	def reason () {
 		return reason(this)
+	}
+
+	def reason(schema) {
+		return reason(this,schema)
+	}
+
+	def owl(schema) {
+		return owl(this,schema)
 	}
 
 	def owl () {
@@ -350,6 +407,14 @@ class GroovyRdfModel extends ModelCom implements Model {
     	this.write(b, "JSON-LD", null)
     	return b.toString()  
 	}
+
+	def xml () {
+		ByteArrayOutputStream b = new ByteArrayOutputStream()
+    	this.write(b, "RDF/XML-ABBREV", null)
+    	return b.toString() 
+	}
+
+
 
 	def deleteWhere(String spl) {
 		deleteWhere(spl, this)

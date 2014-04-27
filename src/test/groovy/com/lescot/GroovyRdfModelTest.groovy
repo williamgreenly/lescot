@@ -43,6 +43,8 @@ class GroovyRdfModelTest extends GroovyTestCase {
 	@prefix spin: <http://spinrdf.org/spin#>.
 	@prefix sp: <http://spinrdf.org/sp#>.
 	@prefix spl: <http://spinrdf.org/spl#>.
+	@prefix coo: <http://purl.org/coo/ns#>.
+	@prefix gr: <http://purl.org/goodrelations/v1#>.
 
 	kotg: a owl:Ontology;
 		owl:imports kotw: ;
@@ -134,6 +136,10 @@ class GroovyRdfModelTest extends GroovyTestCase {
 
 	'''
 
+	def load = {filename ->
+		return this.getClass().getResource('/' + filename ).text
+	}
+
 	private fusekiUri = "http://localhost:3030/ds"
 	
 	void setUp() {
@@ -144,7 +150,7 @@ class GroovyRdfModelTest extends GroovyTestCase {
 	}
 	
 	void testConstruction() {
-		assert model.getNsPrefixMap().size() == 14
+		assert model.getNsPrefixMap().size() == 16
 	}
 	
 	void testAddingATriplesWithStrings() {
@@ -272,6 +278,13 @@ class GroovyRdfModelTest extends GroovyTestCase {
 		nm.read (new ByteArrayInputStream(model.json().getBytes()), null, "JSON-LD")
     }
 
+    void testXml () {
+		
+		Model nm = ModelFactory.createDefaultModel()
+		nm.read (new ByteArrayInputStream(model.xml().getBytes()), null, "RDF/XML")
+    }
+
+
     void testAsk() {
     	model.add("kotg:rt a kotg:ExperienceEvent")
     	assert model.ask("kotg:rt a kotg:ExperienceEvent")
@@ -281,6 +294,32 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	model.add("kotg:rt a kotg:ExperienceEvent")
     	assert model.reason().ask("kotg:rt a kotg:Event")
     }	
+
+    
+    void testReasonInNewModel() {
+    	def px = '''
+    		@prefix owl: <http://www.w3.org/2002/07/owl#>.
+			@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+			@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+			@prefix kotg: <http://www.telekom.com/ns/kotg/>.
+			@prefix kotw: <http://www.telekom.com/ns/kotw/>.
+			@prefix scxml: <http://www.w3.org/2005/07/scxml/>.
+			@prefix mmi: <http://www.w3.org/2008/04/mmi-arch/>.
+			@prefix event: <http://purl.org/NET/c4dm/event.owl#>.
+			@prefix time: <http://www.w3.org/2006/time#>.
+			@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+			@prefix provenance: <http://www.w3.org/ns/prov#>.
+    	'''
+    	def tboxterms = new GroovyRdfModel()
+    	
+    	tboxterms.add(px)
+    	tboxterms.add("kotg:Test2 a rdfs:Class. kotg:Test1 a rdfs:Class. kotg:Test1 rdfs:subClassOf kotg:Test2")
+    	tboxterms.add("kotg:x a kotg:Test1")
+    	def res = model.reason(tboxterms)
+    	assert (res.ask("kotg:x a kotg:Test2"))
+    	assert (!model.ask("kotg:Test2 a rdfs:Class"))
+    }
+    
 
     void testSpin() {
     	model.add("kotg:testspin a kotg:Person. kotg:testspin kotg:occupies kotg:testroom.")
@@ -314,6 +353,17 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	res = model.sparqlRemote(sparql)
     	assert !res.ask("kotg:inroom a owl:ObjectProperty")
     }
+
+     void testAddRdfa() {
+    
+    	String html = load("rdfa.html")
+
+    	String base = "http://www.telekom.com/ns/kotg/doc"
+    	model.addRdfa(html, base)
+    	
+    	assert model.ask("?s gr:hasValue ?o")
+    }
+
 
 
 
