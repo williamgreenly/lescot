@@ -23,6 +23,9 @@ repositories {
 	maven {
 		url "http://topquadrant.com/repository/spin"
 	}
+	maven {
+		url "http://nexus2.lex-apps.co.uk/nexus"
+	}
 }
 
 task writeNewPom << {
@@ -58,6 +61,19 @@ dependencies {
     compile group: 'nu.validator.htmlparser', name: 'htmlparser', version: '1.2.1'
     runtime group: 'nu.validator.htmlparser', name: 'htmlparser', version: '1.2.1'
 	testCompile 'junit:junit:4.11'
+}
+
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://nexus2.lex-apps.co.uk/nexus/content/repositories/snapshots") {
+             authentication(userName: "admin", password: "dynamite")
+		}
+             pom.version = "1.0-SNAPSHOT"
+             pom.artifactId = "lescot"
+             pom.groupId = "com.lescot"
+       }
+    }
 }
 
 /*

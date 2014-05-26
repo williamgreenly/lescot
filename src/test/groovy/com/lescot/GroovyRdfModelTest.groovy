@@ -364,7 +364,28 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	assert model.ask("?s gr:hasValue ?o")
     }
 
+    void testAddRdfaLite() {
+    	String html = """
+    	<!DOCTYPE html>
+		<html >
+	    <head>
+	                
+	    </head>
+	    <body>
+			<p vocab='http://schema.org/' resource='#manu' typeof='Person'>
+			   My name is
+			   <span property='name'>Manu Sporny</span>
+			   and you can give me a ring via
+			   <span property='telephone'>1-800-555-0199</span>.
+			   <img property='image' src='http://manu.sporny.org/images/manu.png' />
+			</p>
+		</body>
+		</html>
+    	"""
+    	model.addRdfa(html, "http://something")
 
+    	log.info model.turtle()
+    }
 
 
 /*
