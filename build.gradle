@@ -4,7 +4,7 @@ apply plugin: 'groovy'
 apply plugin: 'maven'
 
 group = 'com.lescot'
-version = '0.1'
+version = '1.0.0'
 
 repositories {
     mavenCentral()
@@ -69,7 +69,7 @@ uploadArchives {
              repository(url: "http://nexus2.lex-apps.co.uk/nexus/content/repositories/snapshots") {
              authentication(userName: "admin", password: "dynamite")
 		}
-             pom.version = "1.0-SNAPSHOT"
+             pom.version = "1.0.0"
              pom.artifactId = "lescot"
              pom.groupId = "com.lescot"
        }
