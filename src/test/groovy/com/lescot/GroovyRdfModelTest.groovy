@@ -190,7 +190,7 @@ class GroovyRdfModelTest extends GroovyTestCase {
 		res = model.sparql("SELECT ?o WHERE {kotg:Test2 a ?o. }")
 		assert res.size() > 0
 		res.each {
-			log.info it['o']
+			
 			assert it['o'] == "kotg:Event"
 		}
 	}
@@ -323,11 +323,15 @@ class GroovyRdfModelTest extends GroovyTestCase {
 
     void testSpin() {
     	model.add("kotg:testspin a kotg:Person. kotg:testspin kotg:occupies kotg:testroom.")
-    	log.info(model.spin().turtle())
     	assert model.spin().ask("kotg:testspin kotg:inroom kotg:testroom")
     }
 
     void testPutPostGetAndDelete() {
+    	def fuseki = new File(this.getClass().getResource('/' + 'jena-fuseki-1.0.2' ).toString()).absolutePath.split(':')[1].toString().trim()
+    	log.info fuseki
+    	def command = "cd ${fuseki} && ./fuseki-server --update --mem /ds"
+    	def proc = command.execute()
+    	proc.waitFor()
     	def datastore = new Datastore(fusekiUri)
     	model.datastore = datastore
     	def uuid = randomUUID() as String
@@ -341,7 +345,6 @@ class GroovyRdfModelTest extends GroovyTestCase {
     		{?s ?p ?o}.
     	}
     	"""
-    	log.info sparql
     	def res = model.sparqlRemote(sparql)
     	assert res.ask("kotg:inroom a owl:ObjectProperty")
     	def m2 = new GroovyRdfModel(model.getNsPrefixMap(), model.uri, model.datastore)
@@ -384,7 +387,6 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	"""
     	model.addRdfa(html, "http://something")
 
-    	log.info model.turtle()
     }
 
 
