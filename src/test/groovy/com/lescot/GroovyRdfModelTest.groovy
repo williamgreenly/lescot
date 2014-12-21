@@ -325,7 +325,7 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	model.add("kotg:testspin a kotg:Person. kotg:testspin kotg:occupies kotg:testroom.")
     	assert model.spin().ask("kotg:testspin kotg:inroom kotg:testroom")
     }
-
+/*
     void testPutPostGetAndDelete() {
     	def fuseki = new File(this.getClass().getResource('/' + 'jena-fuseki-1.0.2' ).toString()).absolutePath.split(':')[1].toString().trim()
     	log.info fuseki
@@ -356,7 +356,7 @@ class GroovyRdfModelTest extends GroovyTestCase {
     	res = model.sparqlRemote(sparql)
     	assert !res.ask("kotg:inroom a owl:ObjectProperty")
     }
-
+*/
      void testAddRdfa() {
     
     	String html = load("rdfa.html")

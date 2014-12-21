@@ -22,16 +22,19 @@ import com.hp.hpl.jena.update.GraphStore
 import com.hp.hpl.jena.update.UpdateRequest
 import com.hp.hpl.jena.update.UpdateAction
 import com.hp.hpl.jena.rdf.model.impl.ModelCom
+import com.hp.hpl.jena.rdf.model.impl.InfModelImpl
 import com.hp.hpl.jena.graph.Factory
 import com.hp.hpl.jena.rdf.model.RDFNode
 import com.hp.hpl.jena.reasoner.ReasonerRegistry
 import com.hp.hpl.jena.rdf.model.InfModel
+import com.hp.hpl.jena.reasoner.BaseInfGraph
 import org.topbraid.spin.inference.SPINInferences
 import com.lescot.sparql.Datastore
 import com.github.jsonldjava.jena.*    
 import org.ccil.cowan.tagsoup.Parser
 import groovy.util.XmlSlurper
 import net.rootdev.javardfa.jena.RDFaReader
+import org.mindswap.pellet.jena.*
 
 import groovy.util.logging.*
 
@@ -48,39 +51,43 @@ class GroovyRdfModel extends ModelCom implements Model {
 	Datastore datastore
 
 
+	public static init() {
+		return Factory.createDefaultGraph()
+	}
+
 	public GroovyRdfModel(Map prefixes) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.setNsPrefixes(prefixes)
 	}
 
 	public GroovyRdfModel(Map prefixes, Datastore datastore) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.setNsPrefixes(prefixes)
 		this.datastore = datastore
 	}
 	
 	public GroovyRdfModel(Model m, Map prefixes) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.setNsPrefixes(prefixes)
 		this.add(m)
 	}
 
 	public GroovyRdfModel(Model m, Map prefixes, Datastore datastore) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.setNsPrefixes(prefixes)
 		this.add(m)
 		this.datastore = datastore
 	}
 
 	public GroovyRdfModel(Map prefixes, String uri, Datastore datastore) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.setNsPrefixes(prefixes)
 		this.uri = uri
 		this.datastore = datastore
 	}
 	
 	public GroovyRdfModel(Model m, Map prefixes, String uri, Datastore datastore) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.setNsPrefixes(prefixes)
 		this.add(m)
 		this.uri = uri
@@ -88,23 +95,23 @@ class GroovyRdfModel extends ModelCom implements Model {
 	}
 	
 	public GroovyRdfModel() {
-		super(Factory.createDefaultGraph())
+		super(init())
 	}
 	
 	public GroovyRdfModel(Model m) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.add(m)
 		this.setNsPrefixes(m.getNsPrefixMap())
 	}
 
 	public GroovyRdfModel(String uri, Datastore datastore) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.uri = uri
 		this.datastore = datastore
 	}
 	
 	public GroovyRdfModel(Model m, String uri, Datastore datastore) {
-		super(Factory.createDefaultGraph())
+		super(init())
 		this.add(m)
 		this.setNsPrefixes(m.getNsPrefixMap())
 		this.uri = uri
@@ -261,12 +268,12 @@ class GroovyRdfModel extends ModelCom implements Model {
 		Model box = ModelFactory.createDefaultModel()
 		box.add (m)
 		box.add (schema)
-		InfModel inferredModel = ModelFactory.createInfModel(ReasonerRegistry.getOWLReasoner(), box)
+		InfModel inferredModel = ModelFactory.createInfModel(PelletReasonerFactory.THE_SPEC, box)
 		return new GroovyRdfModel(inferredModel, m.getNsPrefixMap())
 	}
 
 	public static owl(Model m) {
-		InfModel inferredModel = ModelFactory.createInfModel(ReasonerRegistry.getOWLReasoner(), m)
+		InfModel inferredModel = ModelFactory.createInfModel(PelletReasonerFactory.THE_SPEC, m)
 		return new GroovyRdfModel(inferredModel,m.getNsPrefixMap())
 	}
 
