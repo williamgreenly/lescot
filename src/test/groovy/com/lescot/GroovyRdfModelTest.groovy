@@ -386,7 +386,7 @@ class GroovyRdfModelTest extends GroovyTestCase {
 		</html>
     	"""
     	model.addRdfa(html, "http://something")
-
+    	assert model.ask("http://something ?p ?o")
     }
 
 
